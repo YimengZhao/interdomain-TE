@@ -1,0 +1,28 @@
+cp network id:0egress:0 bw:183.333333333egress:1 bw:6600.0cp network id:1egress:0 bw:183.333333333egress:1 bw:6600.0default routing 
+cp network id:0
+egress:0 bw:183.333333333
+egress:1 bw:6600.0
+cp network id:1
+egress:0 bw:183.333333333
+egress:1 bw:6600.0
+independent routing
+isp network id:0
+egress:0 bw:11180.0
+egress:1 bw:460.0
+isp network id:1
+egress:0 bw:11020.0
+egress:1 bw:460.0
+default routing 
+cp network id:0, throughput:13566.6666667
+egress:0 bw:183.333333333
+egress:1 bw:6600.0
+cp network id:1, throughput:13566.6666667
+egress:0 bw:183.333333333
+egress:1 bw:6600.0
+independent routing
+isp network id:0, throughput:23120.0
+egress:0 bw:11180.0
+egress:1 bw:460.0
+isp network id:1, throughput:23120.0
+egress:0 bw:11020.0
+egress:1 bw:460.0
