@@ -43,6 +43,9 @@ class Path:
         """
         return self._nodes[-1]
 
+    def getNodesNum(self):
+	return len(self._nodes)
+
     def getNodes(self):
         """
         :return: all nodes as a list

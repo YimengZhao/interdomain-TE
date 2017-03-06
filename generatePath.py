@@ -5,7 +5,7 @@ import networkx as nx
 from paths import Path
 
 def generatePathsPerIE(source, sink, topology, predicate, cutoff,
-                       maxPaths=float('inf'), modifyFunc=None,
+                       maxPaths, modifyFunc=None,
                        raiseOnEmpty=True):
     """
     Generates all simple paths between source and sink using a given predicate.
@@ -32,8 +32,8 @@ def generatePathsPerIE(source, sink, topology, predicate, cutoff,
     G = topology.getGraph()
     paths = []
     num = 0
-    for p in nx.all_simple_paths(G, source, sink, cutoff):
-	print 'path:{}'.format(p)
+    #maxPaths = 1
+    for p in nx.all_simple_paths(G, source, sink):
         if modifyFunc is None:
             if predicate(p, topology):
                 paths.append(Path(p))
@@ -49,15 +49,15 @@ def generatePathsPerIE(source, sink, topology, predicate, cutoff,
                 if predicate(np, topology):
                     paths.append(np)
                     num += 1
-        if num >= maxPaths:
-            break
     if not paths:
         if raiseOnEmpty:
 	    print 'no paths between {} and {}'.format(source, sink)
             raise exceptions.NoPathsException("No paths between {} and {}".format(source, sink))
+    paths.sort(key=lambda x: x.getNodesNum(), reverse=False)
+    paths = paths[0:maxPaths]
     return paths
 
-def generatePath(ie_pairs, topology, predicate, cutoff, maxPaths=float('inf'), modifyFunc=None, raiseOnEmpty=True):
+def generatePath(ie_pairs, topology, predicate, cutoff, maxPaths=3, modifyFunc=None, raiseOnEmpty=True):
     pptc_set = {}
     for ie in ie_pairs:
         i, e = ie
@@ -65,7 +65,7 @@ def generatePath(ie_pairs, topology, predicate, cutoff, maxPaths=float('inf'), m
     return pptc_set
 
 def generatePathsPerTrafficClass(topology, trafficClasses, predicate, cutoff,
-                                 maxPaths=float('inf'), modifyFunc=None,
+                                 maxPaths=3, modifyFunc=None,
                                  raiseOnEmpty=True):
     """
     Generate all simple paths for each traffic class

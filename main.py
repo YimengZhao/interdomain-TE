@@ -1,7 +1,12 @@
 from bw_allocate_approach import *
 
 if __name__ == "__main__":
-    for i in range(1, 20):
+    #default_routing(2)
+    #independent_routing(2)
+    #negotiate_routing(2)
+    for i in range(1, 15):
         default_routing(i)
-        #independent_routing(i)
-        #negotiate_routing(i)
+        shortest_routing(i)
+        independent_routing(i)
+        negotiate_routing(i)
+

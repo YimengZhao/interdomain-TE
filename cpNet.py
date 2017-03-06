@@ -10,7 +10,7 @@ import copy
 import math
 import networkx
 
-CITY_TRAFFIC_VOLUME = 100
+CITY_TRAFFIC_VOLUME = 10
 class CpNetwork:
     def __init__(self, topo_name, topo_file):
         self.topo = Topology(topo_name, topo_file)
@@ -21,18 +21,18 @@ class CpNetwork:
         trafficMatrix = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in self.topo._graph.nodes():
-            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * dst_topo_node_num
+            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * (dst_topo_node_num - 2)
             
         #generate fake topology
         self.fake_topo = copy.deepcopy(self.topo)
         self.fake_topo._graph.add_node(fake_node_id)
-        self.fake_topo._graph.add_edge(fake_node_id, 0)
+        #self.fake_topo._graph.add_edge(fake_node_id, 0)
         self.fake_topo._graph.add_edge(0, fake_node_id)
-        self.fake_topo._graph.add_edge(fake_node_id, 1)
+        #self.fake_topo._graph.add_edge(fake_node_id, 1)
         self.fake_topo._graph.add_edge(1, fake_node_id)
         
         #generate traffic classes
-        ie_path_map = generatePath(trafficMatrix.keys(), self.fake_topo, nullPredicate, 'shortest', 5)
+        ie_path_map = generatePath(trafficMatrix.keys(), self.fake_topo, nullPredicate, 'shortest', maxPaths=3)
         trafficClasses = generateTrafficClasses(0, trafficMatrix.keys(), trafficMatrix, {'a':1}, {'a':100})
         norm_list = get_norm_weight(trafficClasses)
 
@@ -40,6 +40,7 @@ class CpNetwork:
         pptc = initOptimization(ie_path_map, self.fake_topo, trafficClasses)
         throughput = maxmin_fair_allocate(trafficClasses, self.linkcaps, pptc, norm_list, False)
 
+        print 'cp net max throughput:{}'.format(throughput)
         egress_bw_dict = {}
         for tc, paths in pptc.iteritems():
             for path in paths:
@@ -50,20 +51,27 @@ class CpNetwork:
                 else:
                     egress_bw_dict[real_egress] = path.bw
 
+        for egress, bw in egress_bw_dict.iteritems():
+            print 'egress:{} bw:{}'.format(egress, bw)
+
         result = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in dst_topo.nodes():
+            if node == 0 or node == 1:
+                continue
             for egress, bw in egress_bw_dict.iteritems():
-                result[(egress, node)] = bw / dst_topo_node_num
+                result[(egress, node)] = bw / (dst_topo_node_num - 2)
 
         return result
 
     def egress_all(self, fake_node_id, dst_topo):
         result = {}
         for node in dst_topo.nodes():
+            if node == 0 or node == 1:
+                continue
             nodes_num = networkx.number_of_nodes(self.topo.getGraph())
             result[(fake_node_id, node)] = nodes_num * CITY_TRAFFIC_VOLUME
-        print 'total:{}'.format(nodes_num * CITY_TRAFFIC_VOLUME)
+            print 'egress all src:{} dst:{} bw:{}'.format(fake_node_id, node, nodes_num * CITY_TRAFFIC_VOLUME)
         return result
 
     def egress_volume_shortest(self, egress_nodes, dst_topo):
@@ -77,7 +85,7 @@ class CpNetwork:
             closest_egress = [k for k, v in egress_path_dict.iteritems() if v == min_val]
             node_path_dict[(node, closest_egress[0])] = egress_path_dict[closest_egress[0]]
         dst_node_num = networkx.number_of_nodes(dst_topo._graph)
-        trafficMatrix = dict(zip(node_path_dict.keys(), [CITY_TRAFFIC_VOLUME * dst_node_num] * len(node_path_dict.keys())))
+        trafficMatrix = dict(zip(node_path_dict.keys(), [CITY_TRAFFIC_VOLUME * (dst_node_num - 2)] * len(node_path_dict.keys())))
         trafficClasses = generateTrafficClasses(0, node_path_dict.keys(), trafficMatrix, {'a':1}, {'a':100})
         pptc = {}
         for tc in trafficClasses:
@@ -85,6 +93,7 @@ class CpNetwork:
         norm_list = get_norm_weight(trafficClasses)
         throughput = maxmin_fair_allocate(trafficClasses, self.linkcaps, pptc, norm_list, False)
 
+        print 'cp net shortest throughput:{}'.format(throughput)
         egress_bw_dict = {}
         for tc, paths in pptc.iteritems():
             for path in paths:
@@ -95,11 +104,16 @@ class CpNetwork:
                 else:
                     egress_bw_dict[egress] = path.bw
 
+        for egress, bw in egress_bw_dict.iteritems():
+            print 'egress:{} bw:{}'.format(egress, bw)
+
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         result = {}
         for node in dst_topo.nodes():
+	    if node == 1 or node == 0:
+	        continue
             for egress, bw in egress_bw_dict.iteritems():
-                result[(egress, node)] = bw / dst_topo_node_num
+                result[(egress, node)] = bw / (dst_topo_node_num - 2)
         return result
 
     
@@ -107,16 +121,16 @@ class CpNetwork:
         trafficMatrix = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in self.topo._graph.nodes():
-            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * dst_topo_node_num
+            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * (dst_topo_node_num-2)
 
         self.fake_topo = copy.deepcopy(self.topo)
         self.fake_topo._graph.add_node(fake_node_id)
-        self.fake_topo._graph.add_edge(fake_node_id, 0)
+        #self.fake_topo._graph.add_edge(fake_node_id, 0)
         self.fake_topo._graph.add_edge(0, fake_node_id)
-        self.fake_topo._graph.add_edge(fake_node_id, 1)
+        #self.fake_topo._graph.add_edge(fake_node_id, 1)
         self.fake_topo._graph.add_edge(1, fake_node_id)
 
-        ie_path_map = generatePath(trafficMatrix.keys(), self.fake_topo, nullPredicate, 'shortest', 5)
+        ie_path_map = generatePath(trafficMatrix.keys(), self.fake_topo, nullPredicate, 'shortest', maxPaths=3)
         trafficClasses = generateTrafficClasses(0, trafficMatrix.keys(), trafficMatrix, {'a':1}, {'a':100})
         norm_list = get_norm_weight(trafficClasses)
 
@@ -135,10 +149,15 @@ class CpNetwork:
                 else:
                     egress_bw_dict[real_egress] = path.bw
 
+        for egress, bw in egress_bw_dict.iteritems():
+            print 'egress:{} bw:{}'.format(egress, bw)
+
         result = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in dst_topo.nodes():
+            if node == 0 or node == 1:
+                continue
             for egress, bw in egress_bw_dict.iteritems():
-                result[(egress, node)] = bw / dst_topo_node_num
+                result[(egress, node)] = bw / (dst_topo_node_num -2)
         
         return result

@@ -1,0 +1,2560 @@
+egress all src:10000 dst:2 bw:110
+egress all src:10000 dst:3 bw:110
+egress all src:10000 dst:4 bw:110
+egress all src:10000 dst:5 bw:110
+egress all src:10000 dst:6 bw:110
+egress all src:10000 dst:7 bw:110
+egress all src:10000 dst:8 bw:110
+egress all src:10000 dst:9 bw:110
+egress all src:10000 dst:10 bw:110
+network id: 0, i, 10000, e, 6
+network id: 0, i, 10000, e, 5
+network id: 0, i, 10000, e, 10
+network id: 0, i, 10000, e, 4
+network id: 0, i, 10000, e, 9
+network id: 0, i, 10000, e, 3
+network id: 0, i, 10000, e, 8
+network id: 0, i, 10000, e, 2
+network id: 0, i, 10000, e, 7
+normal_list:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[<paths.Path instance at 0x7f1894821098>]
+[<paths.Path instance at 0x7f189484bbd8>]
+[<paths.Path instance at 0x7f18948446c8>]
+[<paths.Path instance at 0x7f189484bab8>]
+[<paths.Path instance at 0x7f189483a680>]
+[<paths.Path instance at 0x7f189483ccb0>]
+[<paths.Path instance at 0x7f1894841320>]
+[<paths.Path instance at 0x7f1894821b90>]
+[<paths.Path instance at 0x7f1894841a70>]
+0 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 90.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:10.0
+bpc_2_[10000, 0, 2, 5]_10000_5:10.0
+bpc_8_[10000, 0, 2]_10000_2:10.0
+bpc_3_[10000, 0, 4, 10]_10000_10:10.0
+bpc_9_[10000, 1, 3, 7]_10000_7:10.0
+bpc_4_[10000, 0, 4]_10000_4:10.0
+bpc_5_[10000, 0, 4, 9]_10000_9:10.0
+bpc_6_[10000, 1, 3]_10000_3:10.0
+bpc_7_[10000, 1, 3, 8]_10000_8:10.0
+ret:0
+tc:a,src:10000,dst:6,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:5,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:2,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:10,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:7,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:4,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:9,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:3,tentative:10.0,demand:110,high:10.0
+tc:a,src:10000,dst:8,tentative:10.0,demand:110,high:10.0
+throughput:0
+1 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 180.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:20.0
+bpc_2_[10000, 0, 2, 5]_10000_5:20.0
+bpc_8_[10000, 0, 2]_10000_2:20.0
+bpc_3_[10000, 0, 4, 10]_10000_10:20.0
+bpc_9_[10000, 1, 3, 7]_10000_7:20.0
+bpc_4_[10000, 0, 4]_10000_4:20.0
+bpc_5_[10000, 0, 4, 9]_10000_9:20.0
+bpc_6_[10000, 1, 3]_10000_3:20.0
+bpc_7_[10000, 1, 3, 8]_10000_8:20.0
+ret:0
+tc:a,src:10000,dst:6,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:5,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:2,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:10,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:7,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:4,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:9,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:3,tentative:20.0,demand:110,high:20.0
+tc:a,src:10000,dst:8,tentative:20.0,demand:110,high:20.0
+throughput:90.0
+2 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 360.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:40.0
+bpc_2_[10000, 0, 2, 5]_10000_5:40.0
+bpc_8_[10000, 0, 2]_10000_2:40.0
+bpc_3_[10000, 0, 4, 10]_10000_10:40.0
+bpc_9_[10000, 1, 3, 7]_10000_7:40.0
+bpc_4_[10000, 0, 4]_10000_4:40.0
+bpc_5_[10000, 0, 4, 9]_10000_9:40.0
+bpc_6_[10000, 1, 3]_10000_3:40.0
+bpc_7_[10000, 1, 3, 8]_10000_8:40.0
+ret:0
+tc:a,src:10000,dst:6,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:5,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:2,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:10,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:7,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:4,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:9,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:3,tentative:40.0,demand:110,high:40.0
+tc:a,src:10000,dst:8,tentative:40.0,demand:110,high:40.0
+throughput:180.0
+3 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+upper bound:80.0
+lower bound:40.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 720.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:80.0
+bpc_2_[10000, 0, 2, 5]_10000_5:80.0
+bpc_8_[10000, 0, 2]_10000_2:80.0
+bpc_3_[10000, 0, 4, 10]_10000_10:80.0
+bpc_9_[10000, 1, 3, 7]_10000_7:80.0
+bpc_4_[10000, 0, 4]_10000_4:80.0
+bpc_5_[10000, 0, 4, 9]_10000_9:80.0
+bpc_6_[10000, 1, 3]_10000_3:80.0
+bpc_7_[10000, 1, 3, 8]_10000_8:80.0
+ret:0
+tc:a,src:10000,dst:6,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:5,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:2,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:10,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:7,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:4,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:9,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:3,tentative:80.0,demand:110,high:80.0
+tc:a,src:10000,dst:8,tentative:80.0,demand:110,high:80.0
+throughput:360.0
+4 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+upper bound:110
+lower bound:80.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:160.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:160.0
+throughput:720.0
+5 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:320.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:320.0
+throughput:990.0
+6 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:640.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:640.0
+throughput:990.0
+7 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:1280.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:1280.0
+throughput:990.0
+8 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:2560.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:2560.0
+throughput:990.0
+9 round
+[10000, 0, 2, 6]
+[10000, 0, 2, 5]
+[10000, 0, 2]
+[10000, 0, 4, 10]
+[10000, 1, 3, 7]
+[10000, 0, 4]
+[10000, 0, 4, 9]
+[10000, 1, 3]
+[10000, 1, 3, 8]
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+upper bound:110
+lower bound:110
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 48 rows and 9 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_1_[10000, 0, 2, 6]_10000_6:110.0
+bpc_2_[10000, 0, 2, 5]_10000_5:110.0
+bpc_8_[10000, 0, 2]_10000_2:110.0
+bpc_3_[10000, 0, 4, 10]_10000_10:110.0
+bpc_9_[10000, 1, 3, 7]_10000_7:110.0
+bpc_4_[10000, 0, 4]_10000_4:110.0
+bpc_5_[10000, 0, 4, 9]_10000_9:110.0
+bpc_6_[10000, 1, 3]_10000_3:110.0
+bpc_7_[10000, 1, 3, 8]_10000_8:110.0
+ret:0
+tc:a,src:10000,dst:6,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:5,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:2,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:10,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:7,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:4,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:9,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:3,tentative:110.0,demand:110,high:5120.0
+tc:a,src:10000,dst:8,tentative:110.0,demand:110,high:5120.0
+throughput:990.0
+single input
+nodes:[10000, 0, 2, 6]
+bw:110.0
+nodes:[10000, 0, 2, 5]
+bw:110.0
+nodes:[10000, 0, 2]
+bw:110.0
+nodes:[10000, 0, 4, 10]
+bw:110.0
+nodes:[10000, 1, 3, 7]
+bw:110.0
+nodes:[10000, 0, 4]
+bw:110.0
+nodes:[10000, 0, 4, 9]
+bw:110.0
+nodes:[10000, 1, 3]
+bw:110.0
+nodes:[10000, 1, 3, 8]
+bw:110.0
+singleinput
+network:0
+egress:0 bw:660.0
+egress:1 bw:330.0
+network id: 0, i, 2, e, 10000
+network id: 0, i, 5, e, 10000
+network id: 0, i, 10, e, 10000
+network id: 0, i, 1, e, 10000
+network id: 0, i, 4, e, 10000
+network id: 0, i, 9, e, 10000
+network id: 0, i, 0, e, 10000
+network id: 0, i, 7, e, 10000
+network id: 0, i, 3, e, 10000
+network id: 0, i, 8, e, 10000
+network id: 0, i, 6, e, 10000
+[<paths.Path instance at 0x7f1894844200>]
+[<paths.Path instance at 0x7f189483cb90>]
+[<paths.Path instance at 0x7f1894821b48>]
+[<paths.Path instance at 0x7f189483a4d0>]
+[<paths.Path instance at 0x7f189472c638>]
+[<paths.Path instance at 0x7f189472b9e0>]
+[<paths.Path instance at 0x7f18948418c0>]
+[<paths.Path instance at 0x7f1894791e18>]
+[<paths.Path instance at 0x7f189472f3f8>]
+[<paths.Path instance at 0x7f1896198440>]
+[<paths.Path instance at 0x7f189472ca28>]
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 22.0)
+bpc_1_[2, 0, 10000]_2_10000:10.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:10.0
+bpc_8_[7, 10, 1, 10000]_7_10000:10.0
+bpc_3_[10, 1, 10000]_10_10000:10.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:10.0
+bpc_4_[1, 10000]_1_10000:10.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:10.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:10.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:10.0
+bpc_6_[9, 2, 0, 10000]_9_10000:10.0
+bpc_7_[0, 10000]_0_10000:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+tentative:10.0 demand:90 high:10.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 143.0)
+bpc_1_[2, 0, 10000]_2_10000:20.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:20.0
+bpc_8_[7, 10, 1, 10000]_7_10000:20.0
+bpc_3_[10, 1, 10000]_10_10000:20.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:20.0
+bpc_4_[1, 10000]_1_10000:20.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:20.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:20.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:20.0
+bpc_6_[9, 2, 0, 10000]_9_10000:20.0
+bpc_7_[0, 10000]_0_10000:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+tentative:20.0 demand:90 high:20.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 385.0)
+bpc_1_[2, 0, 10000]_2_10000:40.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:40.0
+bpc_8_[7, 10, 1, 10000]_7_10000:40.0
+bpc_3_[10, 1, 10000]_10_10000:40.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:40.0
+bpc_4_[1, 10000]_1_10000:40.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:40.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:40.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:40.0
+bpc_6_[9, 2, 0, 10000]_9_10000:40.0
+bpc_7_[0, 10000]_0_10000:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+tentative:40.0 demand:90 high:40.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 839.0)
+bpc_1_[2, 0, 10000]_2_10000:80.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:80.0
+bpc_8_[7, 10, 1, 10000]_7_10000:80.0
+bpc_3_[10, 1, 10000]_10_10000:80.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:80.0
+bpc_4_[1, 10000]_1_10000:80.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:80.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:80.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:80.0
+bpc_6_[9, 2, 0, 10000]_9_10000:80.0
+bpc_7_[0, 10000]_0_10000:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+tentative:80.0 demand:90 high:80.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+tentative:90.0 demand:90 high:160.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+tentative:90.0 demand:90 high:320.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+tentative:90.0 demand:90 high:640.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+tentative:90.0 demand:90 high:1280.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+tentative:90.0 demand:90 high:2560.0
+max min ratio throughput:0
+(10, 1)
+(9, 8)
+(8, 9)
+(8, 5)
+(5, 8)
+(6, 7)
+(2, 9)
+(10, 7)
+(7, 6)
+(6, 3)
+(3, 6)
+(1, 10)
+(10, 9)
+(6, 4)
+(5, 4)
+(7, 10)
+(4, 5)
+(9, 10)
+(8, 7)
+(1, 0)
+(0, 1)
+(4, 6)
+(9, 2)
+(3, 4)
+(2, 0)
+(4, 3)
+(7, 8)
+(0, 2)
+Tried aggregator 1 time.
+LP Presolve eliminated 54 rows and 13 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 948.0)
+bpc_1_[2, 0, 10000]_2_10000:90.0
+bpc_2_[5, 8, 9, 2, 0, 10000]_5_10000:90.0
+bpc_8_[7, 10, 1, 10000]_7_10000:90.0
+bpc_3_[10, 1, 10000]_10_10000:90.0
+bpc_9_[3, 6, 7, 10, 1, 10000]_3_10000:90.0
+bpc_4_[1, 10000]_1_10000:90.0
+bpc_10_[8, 9, 2, 0, 10000]_8_10000:90.0
+bpc_5_[4, 6, 7, 10, 1, 10000]_4_10000:90.0
+bpc_11_[6, 7, 10, 1, 10000]_6_10000:90.0
+bpc_6_[9, 2, 0, 10000]_9_10000:90.0
+bpc_7_[0, 10000]_0_10000:90.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+tentative:90.0 demand:90 high:5120.0
+max min ratio throughput:990.0
+egress_ratio throughput:990.0
+egress:0 bw:450.0
+egress:1 bw:540.0
+network id: 0, i, 1, e, 2
+network id: 0, i, 1, e, 3
+network id: 0, i, 0, e, 6
+network id: 0, i, 1, e, 10
+network id: 0, i, 1, e, 7
+network id: 0, i, 0, e, 10
+network id: 0, i, 1, e, 4
+network id: 0, i, 1, e, 5
+network id: 0, i, 1, e, 8
+network id: 0, i, 0, e, 5
+network id: 0, i, 0, e, 7
+network id: 0, i, 0, e, 4
+network id: 0, i, 0, e, 9
+network id: 0, i, 1, e, 6
+network id: 0, i, 0, e, 3
+network id: 0, i, 0, e, 8
+network id: 0, i, 0, e, 2
+network id: 0, i, 1, e, 9
+normal_list:
+[0.8333333333333333, 1.0, 1.0, 1.0, 0.8333333333333333, 1.0, 1.0, 0.8333333333333333, 1.0, 0.8333333333333333, 0.8333333333333333, 0.8333333333333333, 0.8333333333333333, 0.8333333333333333, 1.0, 1.0, 0.8333333333333333, 1.0]
+[<paths.Path instance at 0x7f18947294d0>]
+[<paths.Path instance at 0x7f189484b3b0>]
+[<paths.Path instance at 0x7f189484b488>]
+[<paths.Path instance at 0x7f1894791dd0>]
+[<paths.Path instance at 0x7f1894791d40>]
+[<paths.Path instance at 0x7f18948418c0>]
+[<paths.Path instance at 0x7f189472b098>]
+[<paths.Path instance at 0x7f1894841488>]
+[<paths.Path instance at 0x7f189472b710>]
+[<paths.Path instance at 0x7f189484b560>]
+[<paths.Path instance at 0x7f1894791f38>]
+[<paths.Path instance at 0x7f189483ac20>]
+[<paths.Path instance at 0x7f1894821bd8>]
+[<paths.Path instance at 0x7f189483ac68>]
+[<paths.Path instance at 0x7f1894841368>]
+[<paths.Path instance at 0x7f189472b0e0>]
+[<paths.Path instance at 0x7f189483a4d0>]
+[<paths.Path instance at 0x7f1894844200>]
+0 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+upper bound:8.33333333333
+lower bound:0.0
+upper bound:10.0
+lower bound:0.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 164.99999999999997)
+bpc_15_[0, 1, 3]_0_3:8.33333333333
+bpc_1_[1, 2]_1_2:10.0
+bpc_2_[1, 3]_1_3:10.0
+bpc_8_[1, 2, 5]_1_5:10.0
+bpc_3_[0, 2, 6]_0_6:8.33333333333
+bpc_9_[1, 3, 8]_1_8:10.0
+bpc_4_[1, 4, 10]_1_10:10.0
+bpc_10_[0, 2, 5]_0_5:8.33333333333
+bpc_5_[1, 3, 7]_1_7:10.0
+bpc_16_[0, 1, 3, 8]_0_8:8.33333333333
+bpc_11_[0, 1, 3, 7]_0_7:8.33333333333
+bpc_6_[0, 4, 10]_0_10:8.33333333333
+bpc_17_[0, 2]_0_2:8.33333333333
+bpc_12_[0, 4]_0_4:8.33333333333
+bpc_7_[1, 4]_1_4:10.0
+bpc_18_[1, 4, 9]_1_9:10.0
+bpc_13_[0, 4, 9]_0_9:8.33333333333
+bpc_14_[1, 2, 6]_1_6:10.0
+ret:0
+tc:a,src:0,dst:3,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:1,dst:2,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:1,dst:3,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:1,dst:5,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:0,dst:6,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:1,dst:8,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:1,dst:10,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:0,dst:5,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:1,dst:7,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:0,dst:8,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:0,dst:7,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:0,dst:10,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:0,dst:2,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:0,dst:4,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:1,dst:4,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:1,dst:9,tentative:10.0,demand:60.0,high:10.0
+tc:a,src:0,dst:9,tentative:8.33333333333,demand:50.0,high:10.0
+tc:a,src:1,dst:6,tentative:10.0,demand:60.0,high:10.0
+throughput:0
+1 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:20.0
+lower bound:10.0
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:20.0
+lower bound:10.0
+upper bound:20.0
+lower bound:10.0
+upper bound:16.6666666667
+lower bound:8.33333333333
+upper bound:20.0
+lower bound:10.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 329.99999999999994)
+bpc_15_[0, 1, 3]_0_3:16.6666666667
+bpc_1_[1, 2]_1_2:20.0
+bpc_2_[1, 3]_1_3:20.0
+bpc_8_[1, 2, 5]_1_5:20.0
+bpc_3_[0, 2, 6]_0_6:16.6666666667
+bpc_9_[1, 3, 8]_1_8:20.0
+bpc_4_[1, 4, 10]_1_10:20.0
+bpc_10_[0, 2, 5]_0_5:16.6666666667
+bpc_5_[1, 3, 7]_1_7:20.0
+bpc_16_[0, 1, 3, 8]_0_8:16.6666666667
+bpc_11_[0, 1, 3, 7]_0_7:16.6666666667
+bpc_6_[0, 4, 10]_0_10:16.6666666667
+bpc_17_[0, 2]_0_2:16.6666666667
+bpc_12_[0, 4]_0_4:16.6666666667
+bpc_7_[1, 4]_1_4:20.0
+bpc_18_[1, 4, 9]_1_9:20.0
+bpc_13_[0, 4, 9]_0_9:16.6666666667
+bpc_14_[1, 2, 6]_1_6:20.0
+ret:0
+tc:a,src:0,dst:3,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:1,dst:2,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:1,dst:3,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:1,dst:5,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:0,dst:6,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:1,dst:8,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:1,dst:10,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:0,dst:5,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:1,dst:7,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:0,dst:8,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:0,dst:7,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:0,dst:10,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:0,dst:2,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:0,dst:4,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:1,dst:4,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:1,dst:9,tentative:20.0,demand:60.0,high:20.0
+tc:a,src:0,dst:9,tentative:16.6666666667,demand:50.0,high:20.0
+tc:a,src:1,dst:6,tentative:20.0,demand:60.0,high:20.0
+throughput:165.0
+2 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:40.0
+lower bound:20.0
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:40.0
+lower bound:20.0
+upper bound:40.0
+lower bound:20.0
+upper bound:33.3333333333
+lower bound:16.6666666667
+upper bound:40.0
+lower bound:20.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 659.9999999999999)
+bpc_15_[0, 1, 3]_0_3:33.3333333333
+bpc_1_[1, 2]_1_2:40.0
+bpc_2_[1, 3]_1_3:40.0
+bpc_8_[1, 2, 5]_1_5:40.0
+bpc_3_[0, 2, 6]_0_6:33.3333333333
+bpc_9_[1, 3, 8]_1_8:40.0
+bpc_4_[1, 4, 10]_1_10:40.0
+bpc_10_[0, 2, 5]_0_5:33.3333333333
+bpc_5_[1, 3, 7]_1_7:40.0
+bpc_16_[0, 1, 3, 8]_0_8:33.3333333333
+bpc_11_[0, 1, 3, 7]_0_7:33.3333333333
+bpc_6_[0, 4, 10]_0_10:33.3333333333
+bpc_17_[0, 2]_0_2:33.3333333333
+bpc_12_[0, 4]_0_4:33.3333333333
+bpc_7_[1, 4]_1_4:40.0
+bpc_18_[1, 4, 9]_1_9:40.0
+bpc_13_[0, 4, 9]_0_9:33.3333333333
+bpc_14_[1, 2, 6]_1_6:40.0
+ret:0
+tc:a,src:0,dst:3,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:1,dst:2,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:1,dst:3,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:1,dst:5,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:0,dst:6,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:1,dst:8,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:1,dst:10,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:0,dst:5,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:1,dst:7,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:0,dst:8,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:0,dst:7,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:0,dst:10,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:0,dst:2,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:0,dst:4,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:1,dst:4,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:1,dst:9,tentative:40.0,demand:60.0,high:40.0
+tc:a,src:0,dst:9,tentative:33.3333333333,demand:50.0,high:40.0
+tc:a,src:1,dst:6,tentative:40.0,demand:60.0,high:40.0
+throughput:330.0
+3 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:60.0
+lower bound:40.0
+upper bound:60.0
+lower bound:40.0
+upper bound:60.0
+lower bound:40.0
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:60.0
+lower bound:40.0
+upper bound:60.0
+lower bound:40.0
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:60.0
+lower bound:40.0
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:60.0
+lower bound:40.0
+upper bound:60.0
+lower bound:40.0
+upper bound:50.0
+lower bound:33.3333333333
+upper bound:60.0
+lower bound:40.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_15_[0, 1, 3]_0_3:50.0
+bpc_1_[1, 2]_1_2:60.0
+bpc_2_[1, 3]_1_3:60.0
+bpc_8_[1, 2, 5]_1_5:60.0
+bpc_3_[0, 2, 6]_0_6:50.0
+bpc_9_[1, 3, 8]_1_8:60.0
+bpc_4_[1, 4, 10]_1_10:60.0
+bpc_10_[0, 2, 5]_0_5:50.0
+bpc_5_[1, 3, 7]_1_7:60.0
+bpc_16_[0, 1, 3, 8]_0_8:50.0
+bpc_11_[0, 1, 3, 7]_0_7:50.0
+bpc_6_[0, 4, 10]_0_10:50.0
+bpc_17_[0, 2]_0_2:50.0
+bpc_12_[0, 4]_0_4:50.0
+bpc_7_[1, 4]_1_4:60.0
+bpc_18_[1, 4, 9]_1_9:60.0
+bpc_13_[0, 4, 9]_0_9:50.0
+bpc_14_[1, 2, 6]_1_6:60.0
+ret:0
+tc:a,src:0,dst:3,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:1,dst:2,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:1,dst:3,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:1,dst:5,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:0,dst:6,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:1,dst:8,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:1,dst:10,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:0,dst:5,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:1,dst:7,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:0,dst:8,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:0,dst:7,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:0,dst:10,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:0,dst:2,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:0,dst:4,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:1,dst:4,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:1,dst:9,tentative:60.0,demand:60.0,high:80.0
+tc:a,src:0,dst:9,tentative:50.0,demand:50.0,high:80.0
+tc:a,src:1,dst:6,tentative:60.0,demand:60.0,high:80.0
+throughput:660.0
+4 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_15_[0, 1, 3]_0_3:50.0
+bpc_1_[1, 2]_1_2:60.0
+bpc_2_[1, 3]_1_3:60.0
+bpc_8_[1, 2, 5]_1_5:60.0
+bpc_3_[0, 2, 6]_0_6:50.0
+bpc_9_[1, 3, 8]_1_8:60.0
+bpc_4_[1, 4, 10]_1_10:60.0
+bpc_10_[0, 2, 5]_0_5:50.0
+bpc_5_[1, 3, 7]_1_7:60.0
+bpc_16_[0, 1, 3, 8]_0_8:50.0
+bpc_11_[0, 1, 3, 7]_0_7:50.0
+bpc_6_[0, 4, 10]_0_10:50.0
+bpc_17_[0, 2]_0_2:50.0
+bpc_12_[0, 4]_0_4:50.0
+bpc_7_[1, 4]_1_4:60.0
+bpc_18_[1, 4, 9]_1_9:60.0
+bpc_13_[0, 4, 9]_0_9:50.0
+bpc_14_[1, 2, 6]_1_6:60.0
+ret:0
+tc:a,src:0,dst:3,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:1,dst:2,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:1,dst:3,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:1,dst:5,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:0,dst:6,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:1,dst:8,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:1,dst:10,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:0,dst:5,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:1,dst:7,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:0,dst:8,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:0,dst:7,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:0,dst:10,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:0,dst:2,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:0,dst:4,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:1,dst:4,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:1,dst:9,tentative:60.0,demand:60.0,high:160.0
+tc:a,src:0,dst:9,tentative:50.0,demand:50.0,high:160.0
+tc:a,src:1,dst:6,tentative:60.0,demand:60.0,high:160.0
+throughput:990.0
+5 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_15_[0, 1, 3]_0_3:50.0
+bpc_1_[1, 2]_1_2:60.0
+bpc_2_[1, 3]_1_3:60.0
+bpc_8_[1, 2, 5]_1_5:60.0
+bpc_3_[0, 2, 6]_0_6:50.0
+bpc_9_[1, 3, 8]_1_8:60.0
+bpc_4_[1, 4, 10]_1_10:60.0
+bpc_10_[0, 2, 5]_0_5:50.0
+bpc_5_[1, 3, 7]_1_7:60.0
+bpc_16_[0, 1, 3, 8]_0_8:50.0
+bpc_11_[0, 1, 3, 7]_0_7:50.0
+bpc_6_[0, 4, 10]_0_10:50.0
+bpc_17_[0, 2]_0_2:50.0
+bpc_12_[0, 4]_0_4:50.0
+bpc_7_[1, 4]_1_4:60.0
+bpc_18_[1, 4, 9]_1_9:60.0
+bpc_13_[0, 4, 9]_0_9:50.0
+bpc_14_[1, 2, 6]_1_6:60.0
+ret:0
+tc:a,src:0,dst:3,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:1,dst:2,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:1,dst:3,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:1,dst:5,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:0,dst:6,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:1,dst:8,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:1,dst:10,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:0,dst:5,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:1,dst:7,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:0,dst:8,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:0,dst:7,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:0,dst:10,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:0,dst:2,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:0,dst:4,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:1,dst:4,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:1,dst:9,tentative:60.0,demand:60.0,high:320.0
+tc:a,src:0,dst:9,tentative:50.0,demand:50.0,high:320.0
+tc:a,src:1,dst:6,tentative:60.0,demand:60.0,high:320.0
+throughput:990.0
+6 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_15_[0, 1, 3]_0_3:50.0
+bpc_1_[1, 2]_1_2:60.0
+bpc_2_[1, 3]_1_3:60.0
+bpc_8_[1, 2, 5]_1_5:60.0
+bpc_3_[0, 2, 6]_0_6:50.0
+bpc_9_[1, 3, 8]_1_8:60.0
+bpc_4_[1, 4, 10]_1_10:60.0
+bpc_10_[0, 2, 5]_0_5:50.0
+bpc_5_[1, 3, 7]_1_7:60.0
+bpc_16_[0, 1, 3, 8]_0_8:50.0
+bpc_11_[0, 1, 3, 7]_0_7:50.0
+bpc_6_[0, 4, 10]_0_10:50.0
+bpc_17_[0, 2]_0_2:50.0
+bpc_12_[0, 4]_0_4:50.0
+bpc_7_[1, 4]_1_4:60.0
+bpc_18_[1, 4, 9]_1_9:60.0
+bpc_13_[0, 4, 9]_0_9:50.0
+bpc_14_[1, 2, 6]_1_6:60.0
+ret:0
+tc:a,src:0,dst:3,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:1,dst:2,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:1,dst:3,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:1,dst:5,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:0,dst:6,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:1,dst:8,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:1,dst:10,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:0,dst:5,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:1,dst:7,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:0,dst:8,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:0,dst:7,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:0,dst:10,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:0,dst:2,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:0,dst:4,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:1,dst:4,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:1,dst:9,tentative:60.0,demand:60.0,high:640.0
+tc:a,src:0,dst:9,tentative:50.0,demand:50.0,high:640.0
+tc:a,src:1,dst:6,tentative:60.0,demand:60.0,high:640.0
+throughput:990.0
+7 round
+[0, 1, 3]
+[1, 2]
+[1, 3]
+[1, 2, 5]
+[0, 2, 6]
+[1, 3, 8]
+[1, 4, 10]
+[0, 2, 5]
+[1, 3, 7]
+[0, 1, 3, 8]
+[0, 1, 3, 7]
+[0, 4, 10]
+[0, 2]
+[0, 4]
+[1, 4]
+[1, 4, 9]
+[0, 4, 9]
+[1, 2, 6]
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+upper bound:60.0
+lower bound:60.0
+upper bound:50.0
+lower bound:50.0
+upper bound:60.0
+lower bound:60.0
+(7, 3)
+(1, 3)
+(2, 1)
+(6, 2)
+(9, 4)
+(3, 7)
+(2, 5)
+(4, 0)
+(1, 2)
+(4, 9)
+(0, 4)
+(4, 1)
+(4, 10)
+(3, 2)
+(2, 6)
+(10, 4)
+(1, 4)
+(2, 3)
+(4, 2)
+(1, 0)
+(0, 1)
+(8, 3)
+(5, 2)
+(3, 1)
+(0, 2)
+(3, 8)
+(2, 0)
+(4, 3)
+(3, 4)
+(2, 4)
+Tried aggregator 1 time.
+LP Presolve eliminated 66 rows and 18 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+('Solution status = ', 1)
+('Obj ', 990.0)
+bpc_15_[0, 1, 3]_0_3:50.0
+bpc_1_[1, 2]_1_2:60.0
+bpc_2_[1, 3]_1_3:60.0
+bpc_8_[1, 2, 5]_1_5:60.0
+bpc_3_[0, 2, 6]_0_6:50.0
+bpc_9_[1, 3, 8]_1_8:60.0
+bpc_4_[1, 4, 10]_1_10:60.0
+bpc_10_[0, 2, 5]_0_5:50.0
+bpc_5_[1, 3, 7]_1_7:60.0
+bpc_16_[0, 1, 3, 8]_0_8:50.0
+bpc_11_[0, 1, 3, 7]_0_7:50.0
+bpc_6_[0, 4, 10]_0_10:50.0
+bpc_17_[0, 2]_0_2:50.0
+bpc_12_[0, 4]_0_4:50.0
+bpc_7_[1, 4]_1_4:60.0
+bpc_18_[1, 4, 9]_1_9:60.0
+bpc_13_[0, 4, 9]_0_9:50.0
+bpc_14_[1, 2, 6]_1_6:60.0
+ret:0
+tc:a,src:0,dst:3,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:1,dst:2,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:1,dst:3,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:1,dst:5,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:0,dst:6,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:1,dst:8,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:1,dst:10,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:0,dst:5,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:1,dst:7,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:0,dst:8,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:0,dst:7,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:0,dst:10,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:0,dst:2,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:0,dst:4,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:1,dst:4,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:1,dst:9,tentative:60.0,demand:60.0,high:1280.0
+tc:a,src:0,dst:9,tentative:50.0,demand:50.0,high:1280.0
+tc:a,src:1,dst:6,tentative:60.0,demand:60.0,high:1280.0
+throughput:990.0
+network id:0
+0:450.0
+1:540.0

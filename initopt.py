@@ -24,15 +24,13 @@ def initOptimization(ie_path_map, topology, trafficClasses, predicate=nullPredic
     :return: a tuple containing the :py:class:`~sol.optimization.optbase.Optimization` object and paths per traffic class
         (in the form of a dictionary)
     """
-    pptc = getPathsPerTrafficClass(trafficClasses, ie_path_map)
-    return pptc
-
-def getPathsPerTrafficClass(trafficClasses, ie_path_map):
     result = {}
     for t in trafficClasses:
-	print t
+	if (t.src, t.dst) in ie_path_map:
+		print ie_path_map[(t.src, t.dst)]
         result[copy.deepcopy(t)] = copy.deepcopy(ie_path_map[(t.src, t.dst)])
     return result
+
 
 
         
