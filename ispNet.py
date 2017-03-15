@@ -18,7 +18,25 @@ class IspNetwork:
         self.topo = Topology(topo_name, topo_file)
         if traffic_file:
             self.trafficMatrix = TrafficMatrix.load(traffic_file)
-
+        self.linkcaps = []
+    
+    def get_link_util(self):
+        link_util_dict = {}
+        for tc, paths in self.pptc.iteritems():
+            for path in paths:
+                if path.bw == 0:
+                    continue
+                links = path.getLinks()
+                for link in links:
+                    if link in link_util_dict:
+                        link_util_dict[link] += path.bw
+                    else:
+                        link_util_dict[link] = path.bw
+        for link in self.topo.edges():
+            if link not in link_util_dict:
+                link_util_dict[link] = 0
+        return link_util_dict
+            
 
     def set_traffic(self, trafficMatrix, topo, path_num=3):
         self.trafficMatrix = trafficMatrix
@@ -33,10 +51,8 @@ class IspNetwork:
         #for tc in self.trafficClasses:
             #print tc
         #self.linkcaps = provisionLinks(self.topo, self.trafficClasses, 1)
-        self.linkcaps = set_link_caps(self.topo)
         self.norm_list = get_norm_weight(self.trafficClasses)
-        print 'normal_list:'
-        print self.norm_list.values()
+      
 
     def calc_path_singleinput(self, fake_node, trafficMatrix, cp_num):
         #add fake node
@@ -48,6 +64,7 @@ class IspNetwork:
         self.fake_topo._graph.add_edge(fake_node, 1)
         
         (pptc, throughput) = self.calc_path_maxminfair(trafficMatrix, self.fake_topo)
+        self.pptc = pptc
         ingress_bw_dict = {}
         for i in range(cp_num):
             ingress_bw_dict[i] = {}
@@ -68,7 +85,7 @@ class IspNetwork:
     def calc_path_maxminfair(self, trafficMatrix, topo = None):
         if topo == None:
             topo = self.topo
-        self.set_traffic(trafficMatrix, topo, path_num = 3)
+        self.set_traffic(trafficMatrix, topo, path_num = 10)
         ie_path_map = {}
         for path_map in self.ie_path_map.itervalues():
             ie_path_map.update(path_map)
@@ -78,11 +95,12 @@ class IspNetwork:
             for path in paths:
                 print path.getNodes()'''
         pptc = initOptimization(ie_path_map, topo, self.trafficClasses)
-	self.linkcaps[(0,2)] = 10
-	self.linkcaps[(2,0)] = 10
-	self.linkcaps[(0,1)] = 10
-	self.linkcaps[(1,0)] = 10
+	self.linkcaps[(0,2)] = 10.0
+	self.linkcaps[(2,0)] = 10.0
+	self.linkcaps[(0,1)] = 10.0
+	self.linkcaps[(1,0)] = 10.0
         throughput = maxmin_fair_allocate(self.trafficClasses, self.linkcaps, pptc, self.norm_list, False)
+        self.pptc = pptc
         return (pptc, throughput)
 
 
@@ -92,11 +110,12 @@ class IspNetwork:
         for path_map in self.ie_path_map.itervalues():
             ie_path_map.update(path_map)
         pptc = initOptimization(ie_path_map, self.topo, self.trafficClasses)
-	self.linkcaps[(0,2)] = 10
-	self.linkcaps[(2,0)] = 10
-	self.linkcaps[(0,1)] = 10
-	self.linkcaps[(1,0)] = 10
+	self.linkcaps[(0,2)] = 10.0
+	self.linkcaps[(2,0)] = 10.0
+	self.linkcaps[(0,1)] = 10.0
+	self.linkcaps[(1,0)] = 10.0
         throughput = maxmin_fair_allocate(self.trafficClasses, self.linkcaps, pptc, self.norm_list, False)
+        self.pptc = pptc
         return (pptc, throughput)
 
 		

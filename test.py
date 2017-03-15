@@ -1,6 +1,7 @@
 from topology import Topology
 from cpNet import CpNetwork
 from ispNet import IspNetwork
+import networkx
 
 
 DEFAULT_LOG_DIR = "./log/default.log"
@@ -135,14 +136,24 @@ def independent_routing(cp_num):
 def negotiate_routing(cp_num):
     cpNets = []
     ispTopo = Topology('isp_network', './data/topologies/simple.graphml')
+    node_num = 0
     for i in range(cp_num):
-        cpNets.append(CpNetwork('Abilene', './data/topologies/Abilene.graphml'))
+        net = CpNetwork('Abilene', './data/topologies/Abilene.graphml')
+	print net.topo._graph.nodes()
+	mapping = dict(zip(net.topo._graph.nodes(), [x + i * 11 for x in networkx.nodes_iter(net.topo._graph)]))
+	net.topo._graph = networkx.relabel_nodes(net.topo._graph, mapping)
+	print net.topo._graph.nodes()
+	node_num += networkx.number_of_nodes(net.topo._graph)
 
-    trafficMatrix = {}
+    '''trafficMatrix = {}
     for i in range(cp_num):
-        trafficMatrix[i] = cpNets[i].egress_all(10000, ispTopo)
+        trafficMatrix[i] = cpNets[i].egress_all(10000, ispTopo)'''
     
     ispNet = IspNetwork('isp_network', './data/topologies/simple.graphml')
+    mapping = dict(zip(ispNet.topo._graph.nodes(), [x + node_num for x in networkx.nodes_iter(ispNet.topo._graph)]))
+    ispNet.topo._graph = networkx.relabel_nodes(ispNet.topo._graph, mapping)
+    print ispNet.topo._graph.nodes()
+    return
     egress_bw_dict, throughput = ispNet.calc_path_singleinput(10000, trafficMatrix, cp_num)
 
     print 'singleinput'

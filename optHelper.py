@@ -10,7 +10,7 @@ def set_link_caps(topo):
     G = topo._graph
     for u, v in G.edges_iter():
         link = (u, v)
-        capacities[link] = 8000
+        capacities[link] = 20000
         if u == 10000 and v == 0 or u == 10000 and v == 1 or u == 0 and v == 10000 or u == 1 and v == 10000:
             capacities[link] = 1000000000000000
     return capacities
@@ -29,7 +29,7 @@ def maxmin_fair_ratio_allocate(trafficClasses, linkcaps, pptc, norm_list, egress
     a = 2
     U = 5
     max_demand = max(tc.demand for tc in trafficClasses)
-    round_num = 2 * int(math.ceil(math.log(max_demand/U, a)))
+    round_num = 10 * int(math.ceil(math.log(max_demand/U, a)))
 
     throughput = 0
     f = {}
@@ -102,11 +102,13 @@ def MCF(linkcaps, b_low, b_high, flow_group, pptc, norm_list, is_max):
         prob.objective.set_sense(prob.objective.sense.maximize)
 
         #set flows that is already in flow_group
+	print 'in group'
         for tc in flow_group:
             var_group = []
             for path in flow_group[tc]:
                 var_name = 'bpc_{}_{}_{}_{}'.format(tc.ID, path.getNodes(), tc.src, tc.dst)
                 var_group.append(var_name)
+		print var_name
             prob.linear_constraints.add(lin_expr=[cplex.SparsePair(ind=var_group, val=[1.0]*len(var_group))], senses=["E"], rhs=[tc.tentative_bw], names=["inflow-{}".format(path.getNodes())])
 
         #set flows that is not in flow_group
@@ -124,6 +126,8 @@ def MCF(linkcaps, b_low, b_high, flow_group, pptc, norm_list, is_max):
                     for path in pptc[tc]:
                         var_name = 'bpc_{}_{}_{}_{}'.format(tc.ID, path.getNodes(), tc.src, tc.dst)
                         var_group.append(var_name)
+			print var_name
+		    print upper_bound
                     prob.linear_constraints.add(lin_expr=[cplex.SparsePair(ind=var_group, val=[1.0]*len(var_group))], senses=["L"], rhs=[upper_bound], names=["u{}-{}".format(tc.src, tc.dst)])
                     prob.linear_constraints.add(lin_expr=[cplex.SparsePair(ind=var_group, val=[1.0]*len(var_group))], senses=["G"], rhs=[lower_bound], names=['l{}-{}'.format(tc.src, tc.dst)])
 
@@ -141,7 +145,7 @@ def MCF(linkcaps, b_low, b_high, flow_group, pptc, norm_list, is_max):
                             #print path.getNodes()
                             var_name = 'bpc_{}_{}_{}_{}'.format(tc.ID, path.getNodes(), tc.src, tc.dst)
                             link_cap_var.append(var_name)
-                            #print link_cap_var, ' cap:', cap
+            print link_cap_var, ' cap:', cap
             prob.linear_constraints.add(lin_expr=[cplex.SparsePair(ind=link_cap_var, val=[1.0] * len(link_cap_var))], senses=["L"], rhs=[cap], names=['link-{}-{}'.format(link, path.getNodes)])
 
 
@@ -158,7 +162,8 @@ def MCF(linkcaps, b_low, b_high, flow_group, pptc, norm_list, is_max):
             for path in paths:
                 var_name = 'bpc_{}_{}_{}_{}'.format(tc.ID, path.getNodes(), tc.src, tc.dst)
                 r = prob.solution.get_values(var_name)
-		print '{}:{}'.format(var_name, r)
+                if r != 0:
+			print 'network:{},{}:{}'.format(tc.network_id, var_name, r)
                 tc.tentative_bw += r
                 path.bw = r
 
@@ -196,7 +201,7 @@ def MCF_ratio(linkcaps, b_low, b_high, flow_group, pptc, norm_list, egress_bw_di
             
         obj = []
 	obj = obj_1 + obj_2
-	multi = [1] * len(obj_1) + [-0.1] * len(obj_2)
+	multi = [0.9] * len(obj_1) + [-0.1] * len(obj_2)
         prob.variables.add(obj = multi, lb = [0.0]*len(obj), names = obj)
         prob.objective.set_sense(prob.objective.sense.maximize)
 

@@ -57,8 +57,8 @@ class CpNetwork:
         result = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in dst_topo.nodes():
-            if node == 0 or node == 1:
-                continue
+	    if node == 0 or node == 1:
+		continue
             for egress, bw in egress_bw_dict.iteritems():
                 result[(egress, node)] = bw / (dst_topo_node_num - 2)
 
@@ -66,12 +66,24 @@ class CpNetwork:
 
     def egress_all(self, fake_node_id, dst_topo):
         result = {}
-        for node in dst_topo.nodes():
-            if node == 0 or node == 1:
-                continue
+        for node in dst_topo._graph.nodes():
+	    if node == 0 or node == 1:
+		continue
             nodes_num = networkx.number_of_nodes(self.topo.getGraph())
-            result[(fake_node_id, node)] = nodes_num * CITY_TRAFFIC_VOLUME
+            result[(fake_node_id, node)] = nodes_num  * CITY_TRAFFIC_VOLUME
             print 'egress all src:{} dst:{} bw:{}'.format(fake_node_id, node, nodes_num * CITY_TRAFFIC_VOLUME)
+        return result
+
+    def egress_default(self, src_nodes, dst_topo):
+        result = {}
+	dst_nodes = dst_topo._graph.nodes()
+	dst_nodes.sort()
+	for src_node in src_nodes:
+            for dst_node in dst_topo._graph.nodes():
+	        if dst_node == dst_nodes[0] or dst_node == dst_nodes[1]:
+		    continue
+                result[(src_node, dst_node)] = CITY_TRAFFIC_VOLUME
+                print 'egress all src:{} dst:{} bw:{}'.format(src_node, dst_node, CITY_TRAFFIC_VOLUME)
         return result
 
     def egress_volume_shortest(self, egress_nodes, dst_topo):
@@ -110,8 +122,8 @@ class CpNetwork:
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         result = {}
         for node in dst_topo.nodes():
-	    if node == 1 or node == 0:
-	        continue
+	    if node == 0 or node == 1:
+		continue
             for egress, bw in egress_bw_dict.iteritems():
                 result[(egress, node)] = bw / (dst_topo_node_num - 2)
         return result
@@ -121,7 +133,7 @@ class CpNetwork:
         trafficMatrix = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in self.topo._graph.nodes():
-            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * (dst_topo_node_num-2)
+            trafficMatrix[(node, fake_node_id)] = CITY_TRAFFIC_VOLUME * (dst_topo_node_num - 2)
 
         self.fake_topo = copy.deepcopy(self.topo)
         self.fake_topo._graph.add_node(fake_node_id)
@@ -155,9 +167,9 @@ class CpNetwork:
         result = {}
         dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
         for node in dst_topo.nodes():
-            if node == 0 or node == 1:
-                continue
+	    if node == 0 or node == 1:
+		continue
             for egress, bw in egress_bw_dict.iteritems():
-                result[(egress, node)] = bw / (dst_topo_node_num -2)
+                result[(egress, node)] = bw / (dst_topo_node_num - 2)
         
         return result
