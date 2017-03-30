@@ -56,8 +56,11 @@ def generateTrafficClasses(network_id, iepairs, trafficMatrix, classFractionDict
         trafficClasses = defaultdict(lambda: [])
     index = 1
     index += index_base
+    print len(iepairs)
     for ie in iepairs:
         i, e = ie
+        print ie
+	print trafficMatrix.keys()
         for classname, fraction in classFractionDict.iteritems():
             volflows = fraction * trafficMatrix[ie]
             if classBytesDict is not None:

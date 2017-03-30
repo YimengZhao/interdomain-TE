@@ -1,14 +1,60 @@
-500.0
-980.0
-1460.0
-1940.0
-2420.0
-2900.0
-3380.0
-3860.0
-4340.0
-4820.0
-5300.0
-5780.0
-6260.0
-6740.0
+cp 0 isp 0 get bw 860.0
+cp 1 isp 0 get bw 860.0
+cp 0 isp 1 get bw 780.0
+cp 1 isp 1 get bw 780.0
+cp 0 isp 2 get bw 784.0
+cp 1 isp 2 get bw 704.0
+cp 0 isp 0 get bw 890.0
+cp 1 isp 0 get bw 890.0
+cp 0 isp 1 get bw 810.0
+cp 1 isp 1 get bw 810.0
+cp 0 isp 2 get bw 796.0
+cp 1 isp 2 get bw 716.0
+cp 0 isp 0 get bw 890.0
+cp 1 isp 0 get bw 890.0
+cp 0 isp 1 get bw 810.0
+cp 1 isp 1 get bw 810.0
+cp 0 isp 2 get bw 796.0
+cp 1 isp 2 get bw 716.0
+cp 0 isp 0 get bw 920.0
+cp 1 isp 0 get bw 920.0
+cp 0 isp 1 get bw 840.0
+cp 1 isp 1 get bw 840.0
+cp 0 isp 2 get bw 808.0
+cp 1 isp 2 get bw 728.0
+cp 0 isp 0 get bw 920.0
+cp 1 isp 0 get bw 920.0
+cp 0 isp 1 get bw 840.0
+cp 1 isp 1 get bw 840.0
+cp 0 isp 2 get bw 808.0
+cp 1 isp 2 get bw 728.0
+cp 0 isp 0 get bw 950.0
+cp 1 isp 0 get bw 950.0
+cp 0 isp 1 get bw 870.0
+cp 1 isp 1 get bw 870.0
+cp 0 isp 2 get bw 820.0
+cp 1 isp 2 get bw 740.0
+cp 0 isp 0 get bw 1360.0
+cp 1 isp 0 get bw 1040.0
+cp 0 isp 1 get bw 1120.0
+cp 1 isp 1 get bw 1280.0
+cp 0 isp 2 get bw 1186.0
+cp 1 isp 2 get bw 946.0
+cp 0 isp 0 get bw 1360.0
+cp 1 isp 0 get bw 1040.0
+cp 0 isp 1 get bw 1120.0
+cp 1 isp 1 get bw 1280.0
+cp 0 isp 2 get bw 1196.0
+cp 1 isp 2 get bw 956.0
+cp 0 isp 0 get bw 1360.0
+cp 1 isp 0 get bw 1040.0
+cp 0 isp 1 get bw 1120.0
+cp 1 isp 1 get bw 1280.0
+cp 0 isp 2 get bw 1400.0
+cp 1 isp 2 get bw 1000.0
+cp 0 isp 0 get bw 1360.0
+cp 1 isp 0 get bw 1040.0
+cp 0 isp 1 get bw 1120.0
+cp 1 isp 1 get bw 1280.0
+cp 0 isp 2 get bw 1400.0
+cp 1 isp 2 get bw 1000.0

@@ -11,7 +11,6 @@ import copy
 import math
 import networkx
 
-CITY_TRAFFIC_VOLUME = 10
 
 class IspNetwork:
     def __init__(self, topo_name, topo_file, traffic_file=None):
@@ -38,18 +37,38 @@ class IspNetwork:
         return link_util_dict
             
 
-    def set_traffic(self, trafficMatrix, topo, path_num=3):
-        self.trafficMatrix = trafficMatrix
+    def set_traffic(self, trafficMatrix, topo, isp_id, path_num=3):
+        self.trafficMatrix = {}
+        
+        isp_nodes = self.topo._graph.nodes()
+        print 'ispnodes {}'.format(isp_nodes)
+        for cp_id, tm in trafficMatrix.iteritems():
+            self.trafficMatrix[cp_id] = {}
+            for k, v in tm.iteritems():
+                (ingress, dst) = k
+    
+                if ingress == isp_id:
+                    k1 = (11 * isp_id, dst)
+                    self.trafficMatrix[cp_id][k1] = v
+                    
+        for cp_id, tm in self.trafficMatrix.iteritems():
+            print "cp {}".format(cp_id)
+            for k in tm.keys():
+                print 'k {}'.format(k)
+
         self.trafficClasses = []
         self.ie_path_map = {}
         base_index = 0
+        
         for key in trafficMatrix.keys():
             self.ie_path_map[key] = generatePath(self.trafficMatrix[key].keys(), topo, nullPredicate, "shortest", maxPaths=path_num)
             tcs = generateTrafficClasses(key, self.trafficMatrix[key].keys(), self.trafficMatrix[key], {'a':1}, {'a':100}, index_base = base_index)
             base_index += len(tcs)
             self.trafficClasses.extend(tcs)
-        #for tc in self.trafficClasses:
-            #print tc
+    
+        print 'test trafficclass'
+        for tc in self.trafficClasses:
+            print tc
         #self.linkcaps = provisionLinks(self.topo, self.trafficClasses, 1)
         self.norm_list = get_norm_weight(self.trafficClasses)
       
@@ -82,10 +101,10 @@ class IspNetwork:
         return (ingress_bw_dict, throughput)
 
 
-    def calc_path_maxminfair(self, trafficMatrix, topo = None):
+    def calc_path_maxminfair(self, trafficMatrix, isp_id, topo = None):
         if topo == None:
             topo = self.topo
-        self.set_traffic(trafficMatrix, topo, path_num = 10)
+        self.set_traffic(trafficMatrix, topo, isp_id, path_num = 10)
         ie_path_map = {}
         for path_map in self.ie_path_map.itervalues():
             ie_path_map.update(path_map)
@@ -95,25 +114,25 @@ class IspNetwork:
             for path in paths:
                 print path.getNodes()'''
         pptc = initOptimization(ie_path_map, topo, self.trafficClasses)
-	self.linkcaps[(0,2)] = 10.0
+	'''self.linkcaps[(0,2)] = 10.0
 	self.linkcaps[(2,0)] = 10.0
 	self.linkcaps[(0,1)] = 10.0
-	self.linkcaps[(1,0)] = 10.0
+	self.linkcaps[(1,0)] = 10.0'''
         throughput = maxmin_fair_allocate(self.trafficClasses, self.linkcaps, pptc, self.norm_list, False)
         self.pptc = pptc
         return (pptc, throughput)
 
 
-    def calc_path_shortest(self, trafficMatrix):
-        self.set_traffic(trafficMatrix, self.topo, path_num = 1)
+    def calc_path_shortest(self, trafficMatrix, isp_id):
+        self.set_traffic(trafficMatrix, self.topo, isp_id, path_num = 1)
         ie_path_map = {}
         for path_map in self.ie_path_map.itervalues():
             ie_path_map.update(path_map)
         pptc = initOptimization(ie_path_map, self.topo, self.trafficClasses)
-	self.linkcaps[(0,2)] = 10.0
+	'''self.linkcaps[(0,2)] = 10.0
 	self.linkcaps[(2,0)] = 10.0
 	self.linkcaps[(0,1)] = 10.0
-	self.linkcaps[(1,0)] = 10.0
+	self.linkcaps[(1,0)] = 10.0'''
         throughput = maxmin_fair_allocate(self.trafficClasses, self.linkcaps, pptc, self.norm_list, False)
         self.pptc = pptc
         return (pptc, throughput)

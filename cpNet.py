@@ -10,7 +10,7 @@ import copy
 import math
 import networkx
 
-CITY_TRAFFIC_VOLUME = 10
+CITY_TRAFFIC_VOLUME = 14000
 class CpNetwork:
     def __init__(self, topo_name, topo_file):
         self.topo = Topology(topo_name, topo_file)
@@ -86,18 +86,21 @@ class CpNetwork:
                 print 'egress all src:{} dst:{} bw:{}'.format(src_node, dst_node, CITY_TRAFFIC_VOLUME)
         return result
 
-    def egress_volume_shortest(self, egress_nodes, dst_topo):
+    def egress_volume_shortest(self, egress_nodes, dst_topos):
         g = self.topo.getGraph()
+        egress_nodes_num = len(egress_nodes)
+
         node_path_dict = {}
         for node in g.nodes():
-            egress_path_dict = {}
             for egress in egress_nodes:
-                egress_path_dict[egress] = networkx.shortest_path(g, node, egress)
-            min_val = min(egress_path_dict.itervalues())
-            closest_egress = [k for k, v in egress_path_dict.iteritems() if v == min_val]
-            node_path_dict[(node, closest_egress[0])] = egress_path_dict[closest_egress[0]]
-        dst_node_num = networkx.number_of_nodes(dst_topo._graph)
-        trafficMatrix = dict(zip(node_path_dict.keys(), [CITY_TRAFFIC_VOLUME * (dst_node_num - 2)] * len(node_path_dict.keys())))
+                node_path_dict[(node, egress)] = networkx.shortest_path(g, node, egress)
+                
+        dst_node_num = 11
+        trafficMatrix = {}
+        for k in node_path_dict.keys():
+            trafficMatrix[k] = CITY_TRAFFIC_VOLUME * 10
+            print 'k {} value {}'.format(k, trafficMatrix[k])
+        
         trafficClasses = generateTrafficClasses(0, node_path_dict.keys(), trafficMatrix, {'a':1}, {'a':100})
         pptc = {}
         for tc in trafficClasses:
@@ -119,13 +122,15 @@ class CpNetwork:
         for egress, bw in egress_bw_dict.iteritems():
             print 'egress:{} bw:{}'.format(egress, bw)
 
-        dst_topo_node_num = networkx.number_of_nodes(dst_topo._graph)
+        dst_topo_node_num = networkx.number_of_nodes(dst_topos[0])
         result = {}
-        for node in dst_topo.nodes():
-	    if node == 0 or node == 1:
-		continue
-            for egress, bw in egress_bw_dict.iteritems():
-                result[(egress, node)] = bw / (dst_topo_node_num - 2)
+        for egress, dst_topo in zip(egress_bw_dict.keys(), dst_topos):
+            for node in dst_topo:
+                if node == 0 or node == 11 or node == 22:
+                    continue
+                bw = egress_bw_dict[egress]
+                result[(egress, node)] = bw / 10
+        
         return result
 
     
